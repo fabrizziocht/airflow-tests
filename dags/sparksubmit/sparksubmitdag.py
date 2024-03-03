@@ -3,8 +3,7 @@ from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOpe
 from datetime import datetime
 
 with DAG('spark_submit_job',
-         start_date=datetime(2022, 1, 1),
-         schedule_interval='@daily') as dag:
+         schedule_interval='None') as dag:
     submit_job = SparkSubmitOperator(
         task_id='submit_job',
         application='./scripts/pyspark_script.py',
