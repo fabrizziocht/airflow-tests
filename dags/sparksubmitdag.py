@@ -15,3 +15,5 @@ with DAG('spark_submit_job',
         driver_memory='2g',
         verbose=False
     )
+
+submit_job
