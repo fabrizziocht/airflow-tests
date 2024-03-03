@@ -12,7 +12,8 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
 }
 
-dag = DAG('hello_world', default_args=default_args, schedule_interval=timedelta(days=1))
+dag = DAG('hello_world', default_args=default_args,
+          schedule_interval=timedelta(days=1))
 
 t1 = BashOperator(
     task_id='say_hello',
