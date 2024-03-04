@@ -30,7 +30,7 @@ def drop_columns_from_dataset(input_path, output_path):
 
 
 if __name__ == "__main__":
-    input_dataset_path = "./myfile.csv"
-    output_dataset_path = "./myfile_out.csv"
+    input_dataset_path = "./dags/repo/sparksubmit/myfile.csv"
+    output_dataset_path = "./dags/repo/sparksubmit/out_myfile.csv"
 
     drop_columns_from_dataset(input_dataset_path, output_dataset_path)
