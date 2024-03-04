@@ -12,6 +12,9 @@ def drop_columns_from_dataset(input_path, output_path):
     cwd = os.getcwd()
     print("cargando ubicacion actual")
     print(cwd)
+    for entry in os.scandir('.'):
+        if entry.is_file():
+            print(entry.name)
     # Read the dataset from the given path
     df = spark.read.csv(input_path, header=True, inferSchema=True)
 
