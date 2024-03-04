@@ -16,12 +16,12 @@ def drop_columns_from_dataset(input_path, output_path):
         if entry.is_file():
             print(entry.name)
     # Read the dataset from the given path
-    df = spark.read.csv(input_path, header=True, inferSchema=True)
-    df.show()
+    # df = spark.read.csv(input_path, header=True, inferSchema=True)
+    # df.show()
     # Drop the desired columns
-    columns_to_drop = ["column1", "column2"]
-    df_transformed = df.drop(*columns_to_drop)
-    df_transformed.show()
+    # columns_to_drop = ["column1", "column2"]
+    # df_transformed = df.drop(*columns_to_drop)
+    # df_transformed.show()
     # Save the transformed dataset to the output path
     # df_transformed.write.csv(output_path, header=True)
 
