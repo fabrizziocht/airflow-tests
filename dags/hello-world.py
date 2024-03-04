@@ -13,7 +13,7 @@ default_args = {
 }
 
 dag = DAG('hello_world', default_args=default_args,
-          schedule_interval=timedelta(days=1))
+          schedule_interval=None)
 
 t1 = BashOperator(
     task_id='say_hello',
