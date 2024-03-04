@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+import os
 
 
 def drop_columns_from_dataset(input_path, output_path):
@@ -8,7 +9,9 @@ def drop_columns_from_dataset(input_path, output_path):
 
     # Create or get a spark session
     spark = SparkSession.builder.appName("DropColumnsApp").getOrCreate()
-
+    cwd = os.getcwd()
+    print("cargando ubicacion actual")
+    print(cwd)
     # Read the dataset from the given path
     df = spark.read.csv(input_path, header=True, inferSchema=True)
 
@@ -24,7 +27,7 @@ def drop_columns_from_dataset(input_path, output_path):
 
 
 if __name__ == "__main__":
-    input_dataset_path = "file:///tmp/myfile.csv"
-    output_dataset_path = "file:///tmp/myfile_out.csv"
+    input_dataset_path = "./myfile.csv"
+    output_dataset_path = "./myfile_out.csv"
 
     drop_columns_from_dataset(input_dataset_path, output_dataset_path)
