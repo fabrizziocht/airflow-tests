@@ -7,7 +7,7 @@ with DAG('spark_submit_job',
          schedule_interval=None) as dag:
     submit_job = SparkSubmitOperator(
         task_id='submit_job',
-        application='./scripts/pyspark_script.py',
+        application='.dags/repo/dags/sparksubmit/scripts/pyspark_script.py',
         conn_id='spark_default',
         total_executor_cores='1',
         executor_memory='2g',
