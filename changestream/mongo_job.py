@@ -5,13 +5,13 @@ from pyspark.sql.functions import *
 
 spark = SparkSession.builder.\
     appName("TrackingStream").\
-    config('spark.jars.packages', 'org.mongodb.spark:mongo-spark-connector_2.12::10.2.1').\
+    config('spark.jars.packages', 'org.mongodb.spark:mongo-spark-connector_2.12:10.2.1').\
     getOrCreate()
 
 # define a streaming query
 dataStreamWriter = (spark.readStream
                     .format("mongodb")
-                    .option("spark.mongodb.connection.uri", "mongodb://root:root@localhost:27017")
+                    .option("spark.mongodb.connection.uri", "mongodb://root:root@mongodb.mongodb.svc.cluster.local:27017")
                     .option('spark.mongodb.database', "Bocato")
                     .option('spark.mongodb.collection', "NotificationTracking")
                     .option("change.stream.publish.full.document.only", "True")
