@@ -13,7 +13,7 @@ with DAG('changestream_job',
     submit_job = SparkSubmitOperator(
         task_id='submit_job',
         application='./dags/repo/changestream/mongo_job.py',
-        packages='org.mongodb.spark:mongo-spark-connector_2.12::10.2.1',
+        packages='org.mongodb.spark:mongo-spark-connector_2.12:10.2.1',
         conn_id='spark_default',
         total_executor_cores='1',
         executor_memory='2g',
