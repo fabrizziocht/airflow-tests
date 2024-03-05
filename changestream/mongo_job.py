@@ -61,8 +61,8 @@ dataStreamWriter = (spark.readStream
                     .option('spark.mongodb.database', "Bocato")
                     .option('spark.mongodb.collection', "NotificationTracking")
                     .option('spark.mongodb.read.readPreference.name', "primaryPreferred")
-                    # .option("change.stream.publish.full.document.only", "true")
-                    .schema(readSchema)
+                    .option("spark.mongodb.change.stream.publish.full.document.only", "true")
+                    # .schema(readSchema)
                     .load()
                     # manipulate your streaming data
                     .writeStream
