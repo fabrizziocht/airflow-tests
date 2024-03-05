@@ -73,3 +73,4 @@ dataStreamWriter = (spark.readStream
 
 # run the query
 query = dataStreamWriter.start()
+query.awaitTermination()
