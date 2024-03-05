@@ -5,9 +5,8 @@ from pyspark.sql.functions import *
 
 spark = SparkSession.builder.\
     appName("TrackingStream").\
-    config('spark.jars.packages', 'org.mongodb.spark:mongo-spark-connector_2.12:10.2.1').\
     getOrCreate()
-
+# config('spark.jars.packages', 'org.mongodb.spark:mongo-spark-connector_2.12::10.2.1').\
 # define a streaming query
 dataStreamWriter = (spark.readStream
                     .format("mongodb")
