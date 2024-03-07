@@ -16,7 +16,7 @@ dataStreamWriter = (spark.readStream
                     .writeStream
                     .format("console")
                     .trigger(continuous="5 second")
-                    .outputMode("append")
+                    .outputMode("complete")
                     )
 
 # run the query
