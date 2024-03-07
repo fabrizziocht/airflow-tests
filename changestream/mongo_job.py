@@ -62,7 +62,7 @@ dataStreamWriter = (spark.readStream
                     .option('spark.mongodb.read.readPreference.name', "primaryPreferred")
                     .option("spark.mongodb.change.stream.publish.full.document.only", "true")
                     .option("change.stream.publish.full.document.only", "true")
-                    .schema(readSchema)
+                    # .schema(readSchema)
                     .load()
                     # manipulate your streaming data
                     .writeStream
