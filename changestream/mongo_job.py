@@ -5,10 +5,10 @@ spark = SparkSession.builder.appName("TrackingStream4").getOrCreate()
 
 dataStreamWriter = (spark.readStream
                     .format("mongodb")
-                    .option("spark.mongodb.connection.uri", "mongodb://root:root@mongodb.mongodb.svc.cluster.local:27017")
+                    .option("spark.mongodb.connection.uri", "mongodb://root:root@mongodb-0.mongodb-headless.mongodb.svc.cluster.local:27017")
                     .option('spark.mongodb.database', "Bocato")
                     .option('spark.mongodb.collection', "NotificationTracking")
-                    # .option('spark.mongodb.read.readPreference.name', "primaryPreferred")
+                    .option('spark.mongodb.read.readPreference.name', "primaryPreferred")
                     .option("spark.mongodb.change.stream.publish.full.document.only", "true")
                     .option("change.stream.publish.full.document.only", "true")
                     # .schema(readSchema)
