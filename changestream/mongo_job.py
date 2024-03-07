@@ -65,7 +65,7 @@ dataStreamWriter = (spark.readStream
                     # manipulate your streaming data
                     .writeStream
                     .format("console")
-                    .trigger(continuous="15 second")
+                    .trigger(continuous="5 second")
                     .outputMode("append")
                     )
 
