@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
-spark = SparkSession.builder.appName("TrackingStream4").getOrCreate()
+spark = SparkSession.builder.appName("TrackingStream5").getOrCreate()
 
 dataStreamWriter = (spark.readStream
                     .format("mongodb")
@@ -16,7 +16,7 @@ dataStreamWriter = (spark.readStream
                     # manipulate your streaming data
                     .writeStream
                     .format("console")
-                    .trigger(continuous="5 second")
+                    .trigger(continuous="10 second")
                     .outputMode("append")
                     )
 
