@@ -20,7 +20,7 @@ with DAG('changestream_job',
         executor_memory='2g',
         num_executors='1',
         driver_memory='2g',
-        verbose=False
+        verbose=True
     )
 
 submit_job
